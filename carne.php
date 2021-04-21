@@ -131,16 +131,19 @@ while ($count <= $qtd) {
             </td>
           </tr>
         </table>
-        <div class=\"nome\">{$nome}, {$cpf}, {$endereco}</div>
+        <div class=\"nome\">Nome:{$nome} CPF: {$cpf}<br> Endereço: {$endereco}</div> //alterarçao para descrever os dados do pagante!
       </div>
     </div>
-  </div>";
-
-  if (!$count_quebra_pg) { $count_quebra_pg = 0; } // Preenche Variavel
-  $count_quebra_pg++; // contagem de loop
-  if ($count_quebra_pg == 4) { // Adiciona quebra a cada 4 loops e zera a variavel
+  </div><br><br>"; //2 quebras de linhas para separar os carnes
+  
+  //condiçao desnecessaria!
+  //if (!$count_quebra_pg) { $count_quebra_pg = 0; } // Preenche Variavel
+  //$count_quebra_pg++; // contagem de loop
+  
+  //indicar com mais precisão a quebra de linha
+  if ($count == 4) { // Adiciona quebra a cada 4 parcelas
     echo "<div class=\"quebra-pagina\"></div>";
-    $count_quebra_pg = 0;
+    //$count_quebra_pg = 0;
   }
 
   $count++;
